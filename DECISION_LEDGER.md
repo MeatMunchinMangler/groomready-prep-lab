@@ -22,3 +22,11 @@ Build **GroomReady**, a sharply scoped *pet groomer appointment preparation shar
 
 ## Correction to avoid
 Published competitor prices and marketing metrics are NOT proof of actual paying customers. A share-link with pet name is visible to anyone possessing it; warn users not to include private information.
+
+## v0.5 — 2026-11-11 04:00 PST: deployment and competitive reassessment
+- Inspected isolated GroomReady repo (`eb755b0`, clean before work), previous PARADOX/FormFinish deployment handoffs, and existing separate Moonshot projects. Avoided modifying other worktrees or orchestrators.
+- Fresh official commercial comparables: FurryDesk Solo $39/month regular (promotional $19.50), https://www.furrydesk.com/pricing ; Withers Solo $59.99/month, https://www.withers.pet/ ; Dunner freelancer $9/month, https://dunner.io/ ; EstateHalo individual $49/year and professional $39/month, https://estatehalo.com/pricing . Prices are offers, NOT proof of buyers or revenue.
+- Competitive correction: grooming platforms already bundle intake and reminders; GroomReady is NOT a validated differentiated paid business. The next test must establish real willingness to pay for a standalone share-card workflow before building billing. Freelancer receivables and estate organizers show alternative monetization but require sensitive data handling and/or integrations; no reason to displace this near-release test prematurely.
+- Re-ran 8 assertions: passed. Created public GitHub repository https://github.com/MeatMunchinMangler/groomready-prep-lab and configured Pages at https://meatmunchinmangler.github.io/groomready-prep-lab/ . Initial Pages status building / HTTP 404: do NOT claim public release until HTTPS 200 and browser smoke pass.
+- Data caution: card details are embedded in URL fragment; they are not sent to hosting server by ordinary HTTP requests, but can leak through sharing, screenshots, extensions or device history. No sensitive data, no analytics, no payment collection.
+- Commercial status: prototype tested locally; public deployment pending verification; payment-enabled NO; verified buyers 0; verified revenue $0. No spend or outreach.
