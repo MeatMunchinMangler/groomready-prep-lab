@@ -27,3 +27,12 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Chromium mobile-first interaction proof
         run: node tests/browser_share.cjs
+      - name: Verify isolated public validation deployment
+        run: |
+          curl --fail --silent --show-error --location --retry 3 --max-time 20 https://groomready-validation-20261113.vercel.app/ -o /tmp/groomready-home.html
+          curl --fail --silent --show-error --location --retry 3 --max-time 20 https://groomready-validation-20261113.vercel.app/app.js -o /tmp/groomready-app.js
+          grep -Fq 'GroomReady · Appointment prep' /tmp/groomready-home.html
+          grep -Fq 'id="sharetool"' /tmp/groomready-home.html
+          grep -Fq 'function cleanLandingUrl' /tmp/groomready-app.js
+          ! grep -Fq 'Log in to Vercel' /tmp/groomready-home.html
+          echo "Public validation URL serves GroomReady, not an authentication wall"
