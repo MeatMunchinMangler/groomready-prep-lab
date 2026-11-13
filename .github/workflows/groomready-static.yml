@@ -21,3 +21,9 @@ jobs:
           node --version
           node --check app.js
           node --test tests/*.test.cjs
+      - name: Install pinned browser test tooling
+        run: |
+          npm install --no-save @playwright/test@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Chromium mobile-first interaction proof
+        run: node tests/browser_share.cjs
