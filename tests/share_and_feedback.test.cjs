@@ -25,6 +25,9 @@ test('public feedback is opt-in and points to the known playtest', () => {
   assert.match(html, /id="sharestatus" role="status"/);
   assert.match(html, /href="https:\/\/moonshot-launch-deck-20261111\.vercel\.app\/playtest\.html\?app=groomready"/);
   assert.match(html, /rel="noopener noreferrer"/);
+  assert.match(html, /github\.com\/MeatMunchinMangler\/groomready-prep-lab\/issues\/new\?title=GroomReady%20playtest%20feedback/);
+  assert.match(html, /submitted issues are public/i);
+  assert.match(html, /No feedback is sent unless you submit it there/i);
   assert.match(html, /nothing is submitted automatically/i);
   assert.doesNotMatch(html, /<script[^>]+(?:analytics|gtag|pixel|segment)/i);
 });
